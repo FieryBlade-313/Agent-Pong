@@ -13,8 +13,14 @@ public class Damager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        defender.addReward(-1f);
+        if (defender.transform.position.x < attacker.transform.position.x)
+            ball.left = true;
+        else
+            ball.left = false;
+        defender.addReward(-0.005f*Vector2.SqrMagnitude(ball.getPos()-defender.getPos()));
         attacker.addReward(1f);
+        defender.Increase_curr();        
+        attacker.Increase_curr();
         ball.ResetWithDelay();
     }
 }
