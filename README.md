@@ -5,4 +5,4 @@ Unity __ML-Agents__ is used to train the model.
 
 Simply download this repository and add it to Unity Project.
 
-The trained model is already attached with the gameobject.
+The trained model is already attached with the gameobjects.
